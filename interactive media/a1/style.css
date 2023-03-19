@@ -1,0 +1,30 @@
+.section{
+    padding: 20px;
+    padding-top: 10px;
+    border: 10px double white;
+  } 
+
+
+.myDiv{
+    text-align:center
+}
+
+p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  }
+
+p{
+    font-size: 125%;
+}
+
+.liststyle{
+    list-style-type: decimal-leading-zero;
+}
+
+li{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+li{
+    font-size: 125%;
+}
