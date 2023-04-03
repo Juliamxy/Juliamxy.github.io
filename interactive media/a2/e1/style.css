@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+/*To match the background colour, I used yellow as the main colour block colour. Green and yellow are neighbouring colours and they contrast softly and harmoniously. Of all the yellows, I chose to use a very low saturated colour, the sugar cookie, which maintains the low saturated tone of the page and contrasts with the background colour to make the blocks stand out.*/
+:root{
+    --color-box1:rgb(243, 241, 189);
+    --color-border:rgb(0, 0, 0);
+
+
+}
+
+/* I used Bottle green as the background colour to give the page a subdued, calm colour tone.*/
+
+#background {  
+    background-color: rgb(53, 93, 80);
+    margin: auto;
+    height: 900px;
+    width: 700px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr 0.6fr 2.7fr 0.7fr 1.1fr;
+    grid-template-rows: 0.4fr 1.7fr 1.1fr 2.3fr 2.1fr 0.4fr;
+    gap: 8px 4px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . . . . ."
+      ". box1 box1 box2 box2 ."
+      ". box1 box1 box3 box3 ."
+      ". box4 box5 box5 box6 ."
+      ". box7 box7 box7 box7 ."
+      ". . . . . .";
+  }
+  
+  .box1 { 
+    grid-area: box1; 
+    background-color: var(--color-box1);
+}
+
+  
+  .box2 { 
+    grid-area: box2; 
+    background-color: var(--color-box1);
+}
+  
+  .box3 { grid-area: box3;
+    background-color: var(--color-box1);
+ }
+  
+  .box4 { grid-area: box4; 
+    background-color: var(--color-box1);
+}
+  
+  .box5 { grid-area: box5; 
+    background-color: var(--color-box1);
+}
+  
+  .box6 { grid-area: box6; 
+    background-color: var(--color-box1);
+}
+  
+  .box7 { grid-area: box7; 
+    background-color: var(--color-box1);
+}
+
+
+/*For the border design I have used the most common black colour. This is because a black border gives a solid, stable look. I set the border width to 3px in order to make the border less conspicuous throughout the page. I wanted the viewer to focus primarily on the blocks, where the border serves to subconsciously provide a sense of security.*/
+#style{
+    border-radius:3px;
+    border-width: 3px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+}
+
