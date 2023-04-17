@@ -1,0 +1,106 @@
+/* z-index order */
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  --col-01:#ffffff;
+  --col-02:#000000;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  --border: 1px solid var(--col-02);
+}
+
+.myDiv{
+  margin-bottom: 20px;
+  text-align:center
+
+}
+
+h2{
+  margin: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.Author{
+  margin: auto;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.RecipeImg{
+  border-radius: 5px;
+  border-color: #000000;
+  border-width: 5px;
+}
+
+
+summary {
+  font-weight: bold;
+  font-size: 19px;
+  margin:0;
+  padding: 0.5em;
+  list-style: none;
+}
+
+
+.RecipeBox{
+  width: 850px;
+  margin: 50px auto;
+  border: 3px solid rgb(21, 18, 10);
+  border-left: 0ch;
+  border-right: 0ch;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+.RecipeImageContainer{
+  width: 300px;
+  float:left
+  
+}
+
+.RecipeImageContainer img{
+  display: block;
+  width: 100%;
+}
+
+.content{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 450px;
+  float:right
+}
+
+/*I choose to display my filters as a bar because I think it's a clear way to show the categories*/
+.FilterSection{
+  list-style-type: none;
+  overflow:hidden;
+  padding: 0px;
+  background-color: #f3ea86;
+
+}
+
+.FilterBox{
+  float: left;
+  margin-left: 200px;
+}
+
+
+.FilterButton{
+  padding: 0px;
+
+}
+/*response by changing color*/
+.SelectedFilter{
+  color: #db7e0d;
+  
+}
+
+
+
