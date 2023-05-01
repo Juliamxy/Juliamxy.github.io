@@ -1,0 +1,287 @@
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  --col-01:#082308;
+  --col-02:#c8dfb9;
+  --col-03:#5252ff;
+  --col-04:#c5dca9;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: 0.5s;
+}
+
+.a :link{
+  color: var(--col-01);
+}
+
+.bar a{
+  color:rgb(33, 32, 32);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: solid;
+  padding: 20px 20px;
+}
+/*I have made a simple bar for the guide, where the highlighted green square appears when the mouse is moved over the 
+corresponding button. When the button is pressed the font colour will change to earthy yellow.*/
+.guide{
+  color: black;
+  background-color: rgb(175, 204, 176);
+  width: 1393px;
+  height: 46px;
+}
+.bar :hover{
+  background-color: #80a453;
+  border-radius: 3px;
+}
+
+.bar a:active{
+  color: #79810a;
+}
+nav {
+  margin-top: 1rem;
+}
+
+nav li{
+  font-size: 1rem;
+  float: left;
+  padding: 5px;
+}
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 20px;
+  margin-top: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+#mode-button{
+  float: right;
+  position: sticky;
+  top: 1.5rem;
+}
+/*I used a box shadow to create the effect of a three-dimensional button, 
+which is achieved by shifting the figure while pressing the button*/
+#mode-button{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #fff;
+  width: 80px;
+  height: 40px;
+  background-color: rgb(120, 169, 122);
+  border-radius: 20px;
+  box-shadow: 0 5px #999;
+  border: 1px solid #215226;
+}
+
+#mode-button:hover{
+  background-color: #215226;
+  cursor: pointer;
+}
+
+#mode-button:active{
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+/* code for loading page */
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*For the design of the load-link button, I placed the dark text in a simple rectangular box. When the user mouses over the button, 
+a dark green square slides down from the top of the border and fills the box. At the same time the font colour changes to white.*/
+#load-link{
+  background: none;
+  border: 2px solid #215226;
+  color: #112a13;
+  transition: color 0.4s linear;
+  font-family: monospace , sans-serif;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  margin: 20px;
+  position: relative;
+}
+#load-link:hover{
+  color: #fff;
+}
+
+#load-link::before{
+  transform: scaleY(0);
+}
+
+#load-link:hover::before{
+  transform: scaleY(1);
+}
+
+#load-link::before{
+  background: #215226;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height:100%
+  
+}
+/* throbber while page is fake loading */
+/*The loading animation is achieved using two circular patterns of the same size and different colours. 
+I have set up simple animations using keyframes that move left and right and will loop before the page jumps.*/
+#load-throbber{
+  display: none;
+}
+
+.loader{
+  position: relative;
+}
+
+.loader::before,
+.loader::after{
+  content:"";
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  border-radius: 4em;
+}
+
+#load-throbber::before{
+  background: #bcb603b5;
+  left: 0;
+  animation-name: moveLeft;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+#load-throbber::after{
+  background: #23501fad;
+  right: 0;
+  animation-name: moveRight;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes moveRight {
+  0%{
+    transform: translateX(-10px);
+  }
+  50%{
+    transform: translateX(10px);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes moveLeft {
+  0%{
+    transform: translateX(10px);
+  }
+  50%{
+    transform: translateX(-10px);
+  }
+  100%{
+    transform: translateX(10px);
+  }
+}
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}
