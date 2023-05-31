@@ -4,18 +4,97 @@
 
  <head>
 
-    <meta chardet="utf-8" name="viewport" content="wideth=device-width, initial-scale=1.0">
+    <meta chardet="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/e930878f63.js" crossorigin="anonymous"></script>
 
  </head>
 
  <body>
+   <button id="left">
+   <i class="fa-solid fa-circle-chevron-left"></i>
+   </button>
 
-    <h1>This is my boilerplate</h1>
+   <div id="book" class="book">
+   <!--P1-->
+      <div class="paper" id="page1">
+       <div class="frontpage">
+            <div id="front1" class="frontContent">
+            <p><span>The</span><span>Book</span> <span>of</span>
+   <span>Mystery</span></p>
+            </div>
+         </div>
+         <div class="backpage">
+            <div id="back1" class="backContent">
+               <section>
+                  <h1>Chapter One</h1>
+                  <div class="text" id="text">
+                      <p>Since I chose information design, I thought that the most classic way of presenting information is through a book. So I designed the main body of the page as a book, and instead of the realistic action of turning the pages, I placed two buttons on either side of the book for the user to click on to turn the pages. As I want the user to focus most of their attention on the book and the information, I didn't go overdesign with the buttons and just used the simplest arrows and gave it a common hover and color change effect.
 
+                        When users first click on the page they will see the blurred title 'The Book of Mystery' on a black cover, which may make them curious about the title, and then when they hover over the words in the title the words become clear. By using a filter on the information in the title, I give the user a 'mystery' atmosphere and get them interested in the page before they even open the book.
+
+                        And when the book is opened by clicking on the button on the right side, the text content of the book is shown on the left page, imitating the typography of a novel and the yellowish color of the pages of an old book, allowing the user to interact with it immersively. For the right-hand side, which mimics the illustrated pages of the novel, I drew the image to simulate the texture of the print and used the same pale yellow as the page as the base color for the image, creating a sense of realism as if it had been printed directly onto the page.
+                     </p>
+                  </div>
+              </section>
+            </div>
+         </div>
+      </div>
+   <!--P2-->
+    <div class="paper" id="page2">
+         <div class="frontpage">
+            <div id="front2" class="frontContent">
+               <div class="overlay">
+               <img class=image id="picture1" src="./img/1.jpeg">
+               <div class="pictureContent">
+                  <p>Whispers of secrets, veiled in enigmatic haze.</p>
+               </div>
+            </div>
+            </div>
+         </div>
+         <div class="backpage">
+             <div id="back2" class="backContent">
+               <section>
+                  <div class="text" id="text">
+                      <p>The main interaction occurs when the user wants to read the content of the book, when they move their mouse over the letters in the book, the letters disappear and reappear a few seconds later. Instead of making words disappear, I chose to make single letters disappear so that users can create new words through hover, change the meaning of sentences and even draw simple graphics on the page. This design choice makes the site more playful. I set the letters to reappear after four seconds, which not only gives users more time to interact with the new sentences and words they create, but also prevents them from worrying that they won't be able to read the original sentences again and ensures that they can read normally.
+
+                        When the user finishes reading the book in left-to-right order and turns to the back cover page, they will find a small, faint line on the back cover that should be empty, and upon interaction they will find that the title of the book has changed from "The Book of Mystery" to "The Book of Truth". At this point they may wonder why it has changed, and when they want to continue exploring, the action they take will be to turn the page from right to left from the back cover, which is the opposite direction of normal reading. They will then find that the images, which they could not interact with before, will reveal text when they hover over them. This design illustrates the word 'truth' and allows the user to discover hidden information through simple page-turning interactions, making the site even more interesting and playful.
+                        
+                     </p>
+                  </div>
+              </section>
+            </div>
+         </div>
+      </div>
+   <!--P3-->
+    <div class="paper" id="page3">
+      <div class="frontpage">
+         <div id="front3" class="frontContent">
+            <div class="overlay">
+               <img class=image id="picture1" src="./img/2.jpeg">
+               <div class="pictureContent">
+                  <p>Whispers of secrets, veiled in enigmatic haze.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="backpage">
+          <div id="back3" class="backContent">
+            <p><span>The</span><span>Book</span> <span>of</span>
+     <span>Truth</span></p>
+         </div>
+      </div>
+   </div>
+
+   </div>
+
+   <button id="right">
+   <i class="fa-solid fa-circle-chevron-right"></i>
+   </button>
  </body>
 
 </html>

@@ -1,0 +1,274 @@
+body{
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(204, 204, 204);
+}
+
+/*This is the book part*/
+.book{
+    width: 400px;
+    height: 600px;
+    position: relative;
+    display: flex;
+}
+
+.paper{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    perspective: 1500px;
+}
+
+.frontpage{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(224, 217, 207);
+    border-left: 3px solid rgb(50, 44, 52);;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 1s;
+    backface-visibility: hidden;/*hide front page when the page is flipped*/
+    box-shadow: 10px 10px 8px #484848;
+}
+.backpage{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color:rgb(224, 217, 207);
+    z-index: 0;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 1s;
+    box-shadow: 10px 10px 8px #686868;
+}
+.frontContent,
+.backContent{
+    width: 100%;
+    height: 100%;
+}
+
+.backContent{
+    transform: rotateY(-180deg);
+}
+
+/*Order pages*/
+#page1{
+    z-index: 3;
+}
+
+#page2{
+    z-index: 2;
+}
+
+#page3{
+    z-index: 1;
+}
+
+/*Turnning page*/
+.flipped .frontpage,
+.flipped .backpage{
+    transform: rotateY(-180deg);
+}
+
+/*This is the part of the button*/
+button{
+    margin: 35px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+}
+button:hover i {
+    color: rgb(121, 121, 136);
+}
+i{
+    font-size: 45px;
+    color: rgb(78, 78, 88);
+}
+/*Picture Content*/
+#picture1{
+    width: 100%;
+    height: 100%;
+}
+
+#picture2{
+    width: 100%;
+    height: 100%;
+}
+
+img{
+    border: 5px solid black;
+    border-radius: 2px;
+}
+
+#front2,
+#font3{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.overlay{
+    text-align: center;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: #00000096;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pictureContent{
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:aliceblue;
+    background: #00000096;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.overlay:hover .pictureContent{
+    visibility: visible;
+}
+
+/*Book Name*/
+#front1{
+    background-color: #181818;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+#back3{
+    background-color:#181818;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+#front1 p{
+    color: aliceblue;
+    font-size: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 40px;
+    white-space: pre;
+    user-select: none;
+    cursor: pointer;
+}
+
+#back3 p{
+    color: aliceblue;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 40px;
+    white-space: pre;
+    user-select: none;
+    cursor: pointer;
+}
+#front1 p span{
+    position: relative;
+    filter: blur(5px);
+    transition: 0.5s;
+}
+#front1 p span:hover{
+    filter: blur(0px);
+}
+
+#back3 p span{
+    position: relative;
+    filter: blur(5px);
+    transition: 0.5s;
+}
+#back3 p span:hover{
+    filter: blur(0px);
+}
+/*Text Effect*/
+section{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+  section h1{
+    margin: 30px;
+    font-family: 'Times New Roman', Times, serif;
+   
+  }
+  section .text{
+    white-space: pre-line;
+    position: relative;
+    color: #000000;
+    margin: 30px;
+    max-width: 800px;
+    user-select: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+    font-size: 15px;
+  }
+  
+  section .text span{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  section .text span.active{
+    transform-origin: bottom;
+    animation: smoke 2s linear forwards;
+  }
+  
+  .show{
+    animation: show-letter .5s linear forwards;
+  }
+  
+  @keyframes show-letter{
+    0%{
+        opacity: 0;
+        transform: rotate(0deg) scale(1);
+    }
+    50%{
+        opacity: 0.5;
+        transform: rotate(45deg) scale(1.1);
+    }
+  
+    100%{
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+  }
+  
+  @keyframes smoke{
+    0%{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+    100%{
+        opacity: 0;
+        filter: blur(20px);
+        transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
+    }
+  }
